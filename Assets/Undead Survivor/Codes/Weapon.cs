@@ -48,9 +48,9 @@ public class Weapon : MonoBehaviour
         this.damage = damage;
         this.count += count;
         if(id == 0)
-        {
             Batch();
-        }
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Init(ItemData data)
@@ -78,7 +78,7 @@ public class Weapon : MonoBehaviour
         switch (id)
         {   
             case 0:
-                speed = -150;
+                speed = 150;
                 Batch();
                 break;
             default:
@@ -86,7 +86,8 @@ public class Weapon : MonoBehaviour
                 break;
             
         }
-    
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
     void Batch()
         {

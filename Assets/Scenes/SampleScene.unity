@@ -980,6 +980,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 0b1f7320de4c549139855f91b488f957, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!1 &519109785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1164,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.444444
+  orthographic size: 7.4444447
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2344,6 +2345,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: fd2f012f2637d4adc920f7bdcf481bfd, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1086565619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16148,6 +16150,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 6c15b8cf5041c421ab4f7ef372e95abb, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1457018596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21036,6 +21039,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: d6e89fba6b6a748ae8e69fee2a72d36e, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1649225144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21186,6 +21190,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: a9c67b12621964973bf0ae8d0eb723c5, type: 2}
   level: 0
   weapon: {fileID: 0}
+  gear: {fileID: 0}
 --- !u!114 &1658346237
 MonoBehaviour:
   m_ObjectHideFlags: 0
