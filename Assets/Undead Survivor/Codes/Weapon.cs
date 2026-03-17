@@ -15,14 +15,9 @@ public class Weapon : MonoBehaviour
     Player player;
 
     private void Awake() {
-        player = GetComponentInParent<Player>();
+        player = GameManager.instance.player;
     }
 
-
-    private void Start() {
-        // Init();
-    }
-    // Update is called once per frame
     void Update()
     {
         switch (id)
@@ -75,7 +70,8 @@ public class Weapon : MonoBehaviour
         {
             if (data.projectile == GameManager.instance.pool.prefabs[index])
             {
-                
+                prefabId = index;
+                break;
             }   
         }
 
