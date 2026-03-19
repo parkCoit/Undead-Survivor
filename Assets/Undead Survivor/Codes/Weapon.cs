@@ -36,11 +36,7 @@ public class Weapon : MonoBehaviour
                 break;
             
         }
-        // .. Test Code ..
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            LevelUp(10, 1);
-        }
+    
     }
 
     public void LevelUp(float damage, int count)
@@ -87,7 +83,12 @@ public class Weapon : MonoBehaviour
             
         }
 
-        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
+        // Hand Set
+        Hand hand = player.hands[(int)data.itemType];
+        hand.spriter.sprite = data.hand;
+        hand.gameObject.SetActive(true);
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver); 
     }
     void Batch()
         {
