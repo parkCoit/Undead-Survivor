@@ -3,8 +3,10 @@ using UnityEngine;
 public class LevelUp : MonoBehaviour
 {
     RectTransform rect;
+    Item[] items;
     private void Awake() {
         rect = GetComponent<RectTransform>();
+        items = GetComponentsInChildren<Item>(true);
     }
 
     public void Show()
@@ -16,4 +18,11 @@ public class LevelUp : MonoBehaviour
     {
         rect.localScale = Vector3.zero;
     }
+
+    public void Select(int index)
+    {
+        items[index].OnClick();
+    }
+
+
 }
