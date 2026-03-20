@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4782979903d4045fc94f1c3438c6b1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  isLive: 1
   gameTime: 0
   maxGameTime: 20
   health: 0
@@ -825,7 +826,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 7.444444
+    OrthographicSize: 9.27777
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

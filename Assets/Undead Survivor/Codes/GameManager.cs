@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [Header("# Game Control")]
+    public bool isLive;
     public float gameTime;
     public float maxGameTime = 2 * 10;
     [Header("# Player Info")]
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
+        if (!isLive)
+            return;
+            
         gameTime += Time.deltaTime;
         if (gameTime > maxGameTime)
         {
@@ -45,5 +49,17 @@ public class GameManager : MonoBehaviour
             exp = 0;
             uiLevelUp.Show();
         }
+    }
+
+    public void Stop()
+    {
+        isLive = false;
+        Time.timeScale = 0;
+    }
+    
+    public void Resume()
+    {
+        isLive = true;
+        Time.timeScale = 1;
     }
 }

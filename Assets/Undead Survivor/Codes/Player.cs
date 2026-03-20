@@ -23,8 +23,13 @@ public class Player : MonoBehaviour
         hands = GetComponentsInChildren<Hand>(true);
     }
 
+    
+
 
     private void FixedUpdate() {
+        if (!GameManager.instance.isLive)
+        return;
+
         Vector2 nextVec = inputVec * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
 
@@ -32,10 +37,16 @@ public class Player : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
+        if (!GameManager.instance.isLive)
+        return;
+        
         inputVec = value.Get<Vector2>();
     }
 
     public void LateUpdate() {
+        if (!GameManager.instance.isLive)
+        return;
+        
         if (inputVec.x != 0)
         {
             anim.SetFloat("Speed", inputVec.magnitude);
