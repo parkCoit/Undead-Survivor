@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
     public LevelUp uiLevelUp;
+    public GameObject uiResult;
 
     private void Awake() {
         instance = this;    
@@ -27,6 +30,26 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         uiLevelUp.Select(0); // 임시 스크립트 (첫번째 캐릭터 선택)
         isLive = true;
+    }
+
+    public void GameOver()
+    {
+        StartCoroutine(GameOverRoutine());
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        isLive = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        uiResult.SetActive(true);
+        Stop();
+    }
+
+    public void GameRetry()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Update() {
