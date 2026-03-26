@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public Scanner scanner;
     public Hand[] hands;
+    public RuntimeAnimatorController[] aniCon;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -21,6 +22,10 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<Hand>(true);
+    }
+
+    private void OnEnable() {
+        anim.runtimeAnimatorController = aniCon[GameManager.instance.playerId];
     }
 
     
