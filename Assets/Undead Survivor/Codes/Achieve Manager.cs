@@ -42,5 +42,33 @@ public class AchieveManager : MonoBehaviour
             unlockCharacter[index].SetActive(isUnlock);
         }
     }
+    
+    private void LateUpdate() {
+        foreach (Achieve achieve in achieves)
+        {
+            CheckAchieve(achieve);
+        }
+    }
+
+    private void CheckAchieve(Achieve achieve)
+    {
+        bool isAchieve = false;
+
+        switch (achieve)
+        {
+            case Achieve.unlockPotato:
+                isAchieve = GameManager.instance.kill >= 10;
+                break;
+
+            case Achieve.unlockBean:
+                isAchieve = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
+                break;
+        }
+
+        if (isAchieve && PlayerPrefs.GetInt(achieve.ToString()) == 0)
+        {
+            PlayerPrefs.SetInt(achieve.ToString(), 1);
+        }
+    }
 
 }
